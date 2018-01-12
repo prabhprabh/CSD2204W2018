@@ -1,0 +1,687 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.16299}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+Setting environment for using XAMPP for Windows.\par
+prabh@DESKTOP-5UPSKC7 c:\\xampp\par
+# mysql -u root -p\par
+Enter password:\par
+Welcome to the MariaDB monitor.  Commands end with ; or \\g.\par
+Your MariaDB connection id is 2\par
+Server version: 10.1.13-MariaDB mariadb.org binary distribution\par
+\par
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.\par
+\par
+Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement.\par
+\par
+MariaDB [(none)]> csd2204w18\par
+    -> csd2204w18;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'csd2204w18\par
+csd2204w18' at line 1\par
+MariaDB [(none)]> show databases;\par
++--------------------+\par
+| Database           |\par
++--------------------+\par
+| information_schema |\par
+| mysql              |\par
+| performance_schema |\par
+| phpmyadmin         |\par
+| test               |\par
++--------------------+\par
+5 rows in set (0.00 sec)\par
+\par
+MariaDB [(none)]> create csd2204w18;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'csd2204w18' at line 1\par
+MariaDB [(none)]> create database csd2204w18;\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [(none)]> show databases;\par
++--------------------+\par
+| Database           |\par
++--------------------+\par
+| csd2204w18         |\par
+| information_schema |\par
+| mysql              |\par
+| performance_schema |\par
+| phpmyadmin         |\par
+| test               |\par
++--------------------+\par
+6 rows in set (0.00 sec)\par
+\par
+MariaDB [(none)]> use csd22014w18;\par
+ERROR 1049 (42000): Unknown database 'csd22014w18'\par
+MariaDB [(none)]> use csd2204w18;\par
+Database changed\par
+MariaDB [csd2204w18]> show tables\par
+    -> sjow tables;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sjow tables' at line 2\par
+MariaDB [csd2204w18]> show tables;\par
+Empty set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> create table c1;\par
+ERROR 1113 (42000): A table must have at least 1 column\par
+MariaDB [csd2204w18]> create table c1 (\par
+    -> customer id int(2);\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'id int(2)' at line 2\par
+MariaDB [csd2204w18]> create table c1 (\par
+    -> customer id int (2),\par
+    -> name varchar(40),\par
+    -> nickname (10),\par
+    -> nickname (10),\par
+    ->\par
+    ->\par
+    ->\par
+    ->\par
+    ->\par
+    -> 0\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'id int (2),\par
+name varchar(40),\par
+nickname (10),\par
+nickname (10),\par
+\par
+\par
+\par
+\par
+\par
+0' at line 2\par
+MariaDB [csd2204w18]> create table c1(\par
+    -> customer ID int(2),\par
+    -> name varchar(40),\par
+    -> nickname varchar(10),\par
+    -> address varchar(50),\par
+    -> city varchar(30),\par
+    -> postalcode int(6),\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ID int(2),\par
+name varchar(40),\par
+nickname varchar(10),\par
+address varchar(50),\par
+city var' at line 2\par
+MariaDB [csd2204w18]> create table c1(\par
+    -> customer_ID int(2),\par
+    -> name varchar(40),\par
+    -> nickname varchar(10),\par
+    -> address varchar(50),\par
+    -> city varchar(30),\par
+    -> postalcode int(6),\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 8\par
+MariaDB [csd2204w18]> create table c1 (\par
+    -> customer_ID int(2),\par
+    -> name varchar(40),\par
+    -> nickname varchar(10),\par
+    -> address varchar(50),\par
+    -> city varchar(30),\par
+    -> postalcode int(6),\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 8\par
+MariaDB [csd2204w18]> create table noname (\par
+    -> id integer (3)\par
+    -> );\par
+Query OK, 0 rows affected (0.03 sec)\par
+\par
+MariaDB [csd2204w18]> customer_ID integer (2),\par
+    -> name varchar (40),\par
+    -> nickname varchar (10),\par
+    -> address varchar (50),\par
+    -> city varchar (30),\par
+    -> postalcode integer (6)\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'customer_ID integer (2),\par
+name varchar (40),\par
+nickname varchar (10),\par
+address varch' at line 1\par
+MariaDB [csd2204w18]> create table c1 (\par
+    -> customer_ID int (2),\par
+    -> name varchar (40),\par
+    -> nickname varchar(10),\par
+    -> address varchar(50),\par
+    -> city varchar(30),\par
+    -> postalcode int(6),\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 8\par
+MariaDB [csd2204w18]>  create table c1 (\par
+    ->      customer_ID integer (2),\par
+    ->      name varchar (40),\par
+    ->      nickname varchar (10),\par
+    ->      address varchar (50),\par
+    ->      city varchar (30),\par
+    ->      postalcode int(6),\par
+    ->      );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 8\par
+MariaDB [csd2204w18]>  create table c1 (\par
+    ->      customer_ID integer (2),\par
+    ->      name varchar (40),\par
+    ->      nickname varchar (10),\par
+    ->      address varchar (50),\par
+    ->      city varchar (30),\par
+    ->      postalcode  (6),\par
+    ->      );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(6),\par
+     )' at line 7\par
+MariaDB [csd2204w18]>  create table c1 (\par
+    ->      customer_ID integer (2),\par
+    ->      name varchar (40),\par
+    ->      nickname varchar (10),\par
+    ->      address varchar (50),\par
+    ->      city varchar (30),\par
+    ->      postalcode int (6),\par
+    ->      );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 8\par
+MariaDB [csd2204w18]>  create table c1 (\par
+    ->      customer_ID integer (2),\par
+    ->      name varchar (40),\par
+    ->      nickname varchar (10),\par
+    ->      address varchar (50),\par
+    ->      city varchar (30),\par
+    ->      postalcode int (6)\par
+    ->      );\par
+Query OK, 0 rows affected (0.03 sec)\par
+\par
+MariaDB [csd2204w18]> desc c1;\par
++-------------+-------------+------+-----+---------+-------+\par
+| Field       | Type        | Null | Key | Default | Extra |\par
++-------------+-------------+------+-----+---------+-------+\par
+| customer_ID | int(2)      | YES  |     | NULL    |       |\par
+| name        | varchar(40) | YES  |     | NULL    |       |\par
+| nickname    | varchar(10) | YES  |     | NULL    |       |\par
+| address     | varchar(50) | YES  |     | NULL    |       |\par
+| city        | varchar(30) | YES  |     | NULL    |       |\par
+| postalcode  | int(6)      | YES  |     | NULL    |       |\par
++-------------+-------------+------+-----+---------+-------+\par
+6 rows in set (0.01 sec)\par
+\par
+MariaDB [csd2204w18]> create table person(\par
+    -> person_ID int(2)\par
+    -> name (varchar)\par
+    -> age ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'name (varchar)\par
+age' at line 3\par
+MariaDB [csd2204w18]> create table person(\par
+    -> person_id int(2)\par
+    -> name varchar(40)\par
+    -> age int(3);\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'name varchar(40)\par
+age int(3)' at line 3\par
+MariaDB [csd2204w18]> create table person(\par
+    -> person_ID int(2)\par
+    -> name (varchar)\par
+    -> age int(3)\par
+    -> city varchar(30)\par
+    -> ):\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'name (varchar)\par
+age int(3)\par
+city varchar(30)\par
+):' at line 3\par
+MariaDB [csd2204w18]> create table person(\par
+    -> person_ID int(2)\par
+    -> name (varchar)\par
+    -> age int(3)\par
+    -> city varchar(30)\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'name (varchar)\par
+age int(3)\par
+city varchar(30)\par
+)' at line 3\par
+MariaDB [csd2204w18]> create table person(\par
+    -> person_ID int (2)\par
+    -> name varchar (40)\par
+    -> age int(3)\par
+    -> city varchar(30)\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'name varchar (40)\par
+age int(3)\par
+city varchar(30)\par
+)' at line 3\par
+MariaDB [csd2204w18]> create table person(\par
+    -> person_ID int (2)\par
+    -> name varchar (40)\par
+    -> age int (3)\par
+    -> city varchar (30)\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'name varchar (40)\par
+age int (3)\par
+city varchar (30)\par
+)' at line 3\par
+MariaDB [csd2204w18]> create table person(\par
+    -> person_ID int (2),\par
+    -> name varchar (40),\par
+    -> age int (3),\par
+    -> city varchar (30),\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 6\par
+MariaDB [csd2204w18]> create table person (\par
+    -> person_ID int (2),\par
+    -> name varchar (40),\par
+    -> age int (3),\par
+    -> city varchar (30),\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 6\par
+MariaDB [csd2204w18]> create table person (\par
+    -> person_ID int (2),\par
+    -> name varchar (40),\par
+    -> age int (3),\par
+    -> city varchar (30)\par
+    -> );\par
+Query OK, 0 rows affected (0.03 sec)\par
+\par
+MariaDB [csd2204w18]> insert into person(1,'prabh',22,'brampton'\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1,'prabh',22,'brampton'' at line 1\par
+MariaDB [csd2204w18]> insert into person(1,'prabh',22,'brampton');\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1,'prabh',22,'brampton')' at line 1\par
+MariaDB [csd2204w18]> insert into person values (1,'prabh',22,'brampton');\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> desc person\par
+    -> desc person;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc person' at line 2\par
+MariaDB [csd2204w18]> desc person;\par
++-----------+-------------+------+-----+---------+-------+\par
+| Field     | Type        | Null | Key | Default | Extra |\par
++-----------+-------------+------+-----+---------+-------+\par
+| person_ID | int(2)      | YES  |     | NULL    |       |\par
+| name      | varchar(40) | YES  |     | NULL    |       |\par
+| age       | int(3)      | YES  |     | NULL    |       |\par
+| city      | varchar(30) | YES  |     | NULL    |       |\par
++-----------+-------------+------+-----+---------+-------+\par
+4 rows in set (0.01 sec)\par
+\par
+MariaDB [csd2204w18]> show tables;\par
++----------------------+\par
+| Tables_in_csd2204w18 |\par
++----------------------+\par
+| c1                   |\par
+| noname               |\par
+| person               |\par
++----------------------+\par
+3 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> show create table person;\par
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\par
+| Table  | Create Table                                                                                                                                                                                        |\par
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\par
+| person | CREATE TABLE `person` (\par
+  `person_ID` int(2) DEFAULT NULL,\par
+  `name` varchar(40) DEFAULT NULL,\par
+  `age` int(3) DEFAULT NULL,\par
+  `city` varchar(30) DEFAULT NULL\par
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |\par
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\par
+1 row in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> select * from person;\par
++-----------+-------+------+----------+\par
+| person_ID | name  | age  | city     |\par
++-----------+-------+------+----------+\par
+|         1 | prabh |   22 | brampton |\par
++-----------+-------+------+----------+\par
+1 row in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into person values (2,'gurkirat',23,'india');\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into customers values (1,'Ashley', 'Ash','32 Washington Street','WDC',321200);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (2,'Bob Marley', 'Bm','Keele Street','Toronto',300102);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (3,'Charles theron', 'cher','north york','Toronto',655345);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (4,'Dental Jack', 'DJ','Spartan Building, East','Brazil',341020);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (5,'Domma Newman', 'New','250 Carlson blvd','Canada',657645);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (6,'Eston.M', 'M','21 York.DV','Toronto',657543);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (7,'Ashko Charles','AK','Washington','USA',632523);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (8,'Bobby Chako','chak','kennedy','New York',632543);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (9,'Tont Special','Specie','Oakville','GTA',6324533);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (10,'Jack P','Sparrow','Oaster village','New jersey',635663);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into customers values (10,'Jack P','Sparrow','Oaster village','New jersey',635663);\par
+ERROR 1146 (42S02): Table 'csd2204w18.customers' doesn't exist\par
+MariaDB [csd2204w18]> insert into c1 values (1,'Ashley', 'Ash','32 Washington Street','WDC',321200);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (2,'Bob Marley', 'Bm','Keele Street','Toronto',300102);\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (3,'Charles theron', 'cher','north york','Toronto',655345);\par
+Query OK, 1 row affected (0.01 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (4,'Dental Jack', 'DJ','Spartan Building, East','Brazil',341020);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (5,'Domma Newman', 'New','250 Carlson blvd','Canada',657645);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (6,'Eston.M', 'M','21 York.DV','Toronto',657543);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (7,'Ashko Charles','AK','Washington','USA',632523);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (8,'Bobby Chako','chak','kennedy','New York',632543);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (9,'Tont Special','Specie','Oakville','GTA',6324533);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c1 values (10,'Jack P','Sparrow','Oaster village','New jersey',635663);\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> show create table c1;\par
++-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\par
+| Table | Create Table                                                                                                                                                                                                                                                                          |\par
++-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\par
+| c1    | CREATE TABLE `c1` (\par
+  `customer_ID` int(2) DEFAULT NULL,\par
+  `name` varchar(40) DEFAULT NULL,\par
+  `nickname` varchar(10) DEFAULT NULL,\par
+  `address` varchar(50) DEFAULT NULL,\par
+  `city` varchar(30) DEFAULT NULL,\par
+  `postalcode` int(6) DEFAULT NULL\par
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |\par
++-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\par
+1 row in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> select * from person;\par
++-----------+----------+------+----------+\par
+| person_ID | name     | age  | city     |\par
++-----------+----------+------+----------+\par
+|         1 | prabh    |   22 | brampton |\par
+|         2 | gurkirat |   23 | india    |\par
++-----------+----------+------+----------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> selrct * from c1;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'selrct * from c1' at line 1\par
+MariaDB [csd2204w18]> select * from c1;\par
++-------------+----------------+----------+------------------------+------------+------------+\par
+| customer_ID | name           | nickname | address                | city       | postalcode |\par
++-------------+----------------+----------+------------------------+------------+------------+\par
+|           1 | Ashley         | Ash      | 32 Washington Street   | WDC        |     321200 |\par
+|           2 | Bob Marley     | Bm       | Keele Street           | Toronto    |     300102 |\par
+|           3 | Charles theron | cher     | north york             | Toronto    |     655345 |\par
+|           4 | Dental Jack    | DJ       | Spartan Building, East | Brazil     |     341020 |\par
+|           5 | Domma Newman   | New      | 250 Carlson blvd       | Canada     |     657645 |\par
+|           6 | Eston.M        | M        | 21 York.DV             | Toronto    |     657543 |\par
+|           7 | Ashko Charles  | AK       | Washington             | USA        |     632523 |\par
+|           8 | Bobby Chako    | chak     | kennedy                | New York   |     632543 |\par
+|           9 | Tont Special   | Specie   | Oakville               | GTA        |    6324533 |\par
+|          10 | Jack P         | Sparrow  | Oaster village         | New jersey |     635663 |\par
++-------------+----------------+----------+------------------------+------------+------------+\par
+10 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> create table c like c1;\par
+Query OK, 0 rows affected (0.04 sec)\par
+\par
+MariaDB [csd2204w18]> desc c;\par
++-------------+-------------+------+-----+---------+-------+\par
+| Field       | Type        | Null | Key | Default | Extra |\par
++-------------+-------------+------+-----+---------+-------+\par
+| customer_ID | int(2)      | YES  |     | NULL    |       |\par
+| name        | varchar(40) | YES  |     | NULL    |       |\par
+| nickname    | varchar(10) | YES  |     | NULL    |       |\par
+| address     | varchar(50) | YES  |     | NULL    |       |\par
+| city        | varchar(30) | YES  |     | NULL    |       |\par
+| postalcode  | int(6)      | YES  |     | NULL    |       |\par
++-------------+-------------+------+-----+---------+-------+\par
+6 rows in set (0.01 sec)\par
+\par
+MariaDB [csd2204w18]> insert into c select * from c1 where city like 'new%';\par
+Query OK, 2 rows affected (0.00 sec)\par
+Records: 2  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> select * from c;\par
++-------------+-------------+----------+----------------+------------+------------+\par
+| customer_ID | name        | nickname | address        | city       | postalcode |\par
++-------------+-------------+----------+----------------+------------+------------+\par
+|           8 | Bobby Chako | chak     | kennedy        | New York   |     632543 |\par
+|          10 | Jack P      | Sparrow  | Oaster village | New jersey |     635663 |\par
++-------------+-------------+----------+----------------+------------+------------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> show index from person\par
+    -> show index from person;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'show index from person' at line 2\par
+MariaDB [csd2204w18]> show index from person;\par
+Empty set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> create table cityMaster (\par
+    -> personID int(2),\par
+    -> name varchar(40),\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3\par
+MariaDB [csd2204w18]> create table cityMaster (\par
+    -> cityID int(2),\par
+    -> cityName varchar(40),\par
+    -> );\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 4\par
+MariaDB [csd2204w18]> create table cityMaster (\par
+    -> cityID int(2),\par
+    -> cityName varchar(40)\par
+    -> );\par
+Query OK, 0 rows affected (0.04 sec)\par
+\par
+MariaDB [csd2204w18]> insert into citymaster values (23,'toronto');\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> insert into citymaster values (54,'brampton');\par
+Query OK, 1 row affected (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> select * from citymaster;\par
++--------+----------+\par
+| cityID | cityName |\par
++--------+----------+\par
+|     23 | toronto  |\par
+|     54 | brampton |\par
++--------+----------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> alter table citymaster add column country varchar(100\par
+    -> 0\par
+    -> ;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0' at line 2\par
+MariaDB [csd2204w18]> alter table citymaster add column country varchar(100);\par
+Query OK, 0 rows affected (0.07 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> select * from citymaster;\par
++--------+----------+---------+\par
+| cityID | cityName | country |\par
++--------+----------+---------+\par
+|     23 | toronto  | NULL    |\par
+|     54 | brampton | NULL    |\par
++--------+----------+---------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> alter table citymaster modify column country varchar(10);\par
+Query OK, 2 rows affected (0.08 sec)\par
+Records: 2  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> alter table citymaster change column country to city varchar(10);\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'to city varchar(10)' at line 1\par
+MariaDB [csd2204w18]> alter table citymaster change column country city varchar(10);\par
+Query OK, 0 rows affected (0.01 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> select * from citymaster;\par
++--------+----------+------+\par
+| cityID | cityName | city |\par
++--------+----------+------+\par
+|     23 | toronto  | NULL |\par
+|     54 | brampton | NULL |\par
++--------+----------+------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> alter table citymaster change column country postalcode varchar(10);\par
+ERROR 1054 (42S22): Unknown column 'country' in 'citymaster'\par
+MariaDB [csd2204w18]> alter table citymaster change column city postalcode varchar(10);\par
+Query OK, 0 rows affected (0.01 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> alter table citymaster drop column postalcode;\par
+Query OK, 0 rows affected (0.07 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> select * from citymaster;\par
++--------+----------+\par
+| cityID | cityName |\par
++--------+----------+\par
+|     23 | toronto  |\par
+|     54 | brampton |\par
++--------+----------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> alter table citymaster add primary key (cityID);\par
+Query OK, 2 rows affected (0.99 sec)\par
+Records: 2  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> create table as citypoint * from citymaster;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as citypoint * from citymaster' at line 1\par
+MariaDB [csd2204w18]> create table as citypoint select * from citymaster;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as citypoint select * from citymaster' at line 1\par
+MariaDB [csd2204w18]> create table citypoint as select * from citymaster;\par
+Query OK, 2 rows affected (0.07 sec)\par
+Records: 2  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> show tables;\par
++----------------------+\par
+| Tables_in_csd2204w18 |\par
++----------------------+\par
+| c                    |\par
+| c1                   |\par
+| citymaster           |\par
+| citypoint            |\par
+| noname               |\par
+| person               |\par
++----------------------+\par
+6 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> desc citymaster;\par
++----------+-------------+------+-----+---------+-------+\par
+| Field    | Type        | Null | Key | Default | Extra |\par
++----------+-------------+------+-----+---------+-------+\par
+| cityID   | int(2)      | NO   | PRI | NULL    |       |\par
+| cityName | varchar(40) | YES  |     | NULL    |       |\par
++----------+-------------+------+-----+---------+-------+\par
+2 rows in set (0.01 sec)\par
+\par
+MariaDB [csd2204w18]> alter table citymaster add column name;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1\par
+MariaDB [csd2204w18]> alter table citymaster add column name varchar(30);\par
+Query OK, 0 rows affected (0.08 sec)\par
+Records: 0  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> show index from citymaster;\par
++------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+\par
+| Table      | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |\par
++------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+\par
+| citymaster |          0 | PRIMARY  |            1 | cityID      | A         |           2 |     NULL | NULL   |      | BTREE      |         |               |\par
++------------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+\par
+1 row in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> drop index primary key on cityamster;\par
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'primary key on cityamster' at line 1\par
+MariaDB [csd2204w18]> alter table citymaster drop primary key\par
+    -> ;\par
+Query OK, 2 rows affected (0.14 sec)\par
+Records: 2  Duplicates: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> desc citymaster;\par
++----------+-------------+------+-----+---------+-------+\par
+| Field    | Type        | Null | Key | Default | Extra |\par
++----------+-------------+------+-----+---------+-------+\par
+| cityID   | int(2)      | NO   |     | NULL    |       |\par
+| cityName | varchar(40) | YES  |     | NULL    |       |\par
+| name     | varchar(30) | YES  |     | NULL    |       |\par
++----------+-------------+------+-----+---------+-------+\par
+3 rows in set (0.01 sec)\par
+\par
+MariaDB [csd2204w18]> select * from citymaster;\par
++--------+----------+------+\par
+| cityID | cityName | name |\par
++--------+----------+------+\par
+|     23 | toronto  | NULL |\par
+|     54 | brampton | NULL |\par
++--------+----------+------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> update citymaster set cityname= "toronto" where cityid=23;\par
+Query OK, 0 rows affected (0.00 sec)\par
+Rows matched: 1  Changed: 0  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> select * from citymaster;\par
++--------+----------+------+\par
+| cityID | cityName | name |\par
++--------+----------+------+\par
+|     23 | toronto  | NULL |\par
+|     54 | brampton | NULL |\par
++--------+----------+------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> update citymaster set cityname= "caledon" where cityid=23;\par
+Query OK, 1 row affected (0.00 sec)\par
+Rows matched: 1  Changed: 1  Warnings: 0\par
+\par
+MariaDB [csd2204w18]> select * from citymaster;\par
++--------+----------+------+\par
+| cityID | cityName | name |\par
++--------+----------+------+\par
+|     23 | caledon  | NULL |\par
+|     54 | brampton | NULL |\par
++--------+----------+------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> select * from person;\par
++-----------+----------+------+----------+\par
+| person_ID | name     | age  | city     |\par
++-----------+----------+------+----------+\par
+|         1 | prabh    |   22 | brampton |\par
+|         2 | gurkirat |   23 | india    |\par
++-----------+----------+------+----------+\par
+2 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> truncate table citymaster;\par
+Query OK, 0 rows affected (0.04 sec)\par
+\par
+MariaDB [csd2204w18]> show tables;\par
++----------------------+\par
+| Tables_in_csd2204w18 |\par
++----------------------+\par
+| c                    |\par
+| c1                   |\par
+| citymaster           |\par
+| citypoint            |\par
+| noname               |\par
+| person               |\par
++----------------------+\par
+6 rows in set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> select * from citymaster;\par
+Empty set (0.00 sec)\par
+\par
+MariaDB [csd2204w18]> exit\par
+Bye\par
+\par
+prabh@DESKTOP-5UPSKC7 c:\\xampp\par
+# mysqldump -u -p root csd2204w18 >day5.sql\par
+mysqldump: Got error: 1044: "Access denied for user ''@'localhost' to database 'root'" when selecting the database\par
+\par
+prabh@DESKTOP-5UPSKC7 c:\\xampp\par
+# mysqldump -u -p root csd2204w18 > day5.sql\par
+mysqldump: Got error: 1044: "Access denied for user ''@'localhost' to database 'root'" when selecting the database\par
+\par
+prabh@DESKTOP-5UPSKC7 c:\\xampp\par
+# mysqldump -p -u root csd2204w18 > day5.sql\par
+Enter password:\par
+\par
+prabh@DESKTOP-5UPSKC7 c:\\xampp\par
+#\par
+}
+ 
