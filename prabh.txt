@@ -1,0 +1,118 @@
+
+Setting environment for using XAMPP for Windows.
+prabh@DESKTOP-5UPSKC7 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 10.1.13-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use csd2204w18;
+Database changed
+MariaDB [csd2204w18]> select * from c1;
++-------------+----------------+----------+------------------------+------------+------------+
+| customer_ID | name           | nickname | address                | city       | postalcode |
++-------------+----------------+----------+------------------------+------------+------------+
+|           1 | prabh          | Ash      | 32 Washington Street   | WDC        |     321200 |
+|           2 | Bob Marley     | Bm       | Keele Street           | Toronto    |     300102 |
+|           3 | Charles theron | cher     | north york             | Toronto    |     655345 |
+|           4 | Dental Jack    | DJ       | Spartan Building, East | Brazil     |     341020 |
+|           5 | Domma Newman   | New      | 250 Carlson blvd       | Canada     |     657645 |
+|           6 | Eston.M        | M        | 21 York.DV             | Toronto    |     657543 |
+|           7 | Ashko Charles  | AK       | Washington             | USA        |     632523 |
+|           8 | Bobby Chako    | chak     | kennedy                | New York   |     632543 |
+|           9 | Tont Special   | Specie   | Oakville               | GTA        |    6324533 |
+|          10 | Jack P         | Sparrow  | Oaster village         | New jersey |     635663 |
++-------------+----------------+----------+------------------------+------------+------------+
+10 rows in set (0.01 sec)
+
+MariaDB [csd2204w18]> select * from c1 where city='toronto';
++-------------+----------------+----------+--------------+---------+------------+
+| customer_ID | name           | nickname | address      | city    | postalcode |
++-------------+----------------+----------+--------------+---------+------------+
+|           2 | Bob Marley     | Bm       | Keele Street | Toronto |     300102 |
+|           3 | Charles theron | cher     | north york   | Toronto |     655345 |
+|           6 | Eston.M        | M        | 21 York.DV   | Toronto |     657543 |
++-------------+----------------+----------+--------------+---------+------------+
+3 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where city='new york';
++-------------+-------------+----------+---------+----------+------------+
+| customer_ID | name        | nickname | address | city     | postalcode |
++-------------+-------------+----------+---------+----------+------------+
+|           8 | Bobby Chako | chak     | kennedy | New York |     632543 |
++-------------+-------------+----------+---------+----------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where name='prabh';
++-------------+-------+----------+----------------------+------+------------+
+| customer_ID | name  | nickname | address              | city | postalcode |
++-------------+-------+----------+----------------------+------+------------+
+|           1 | prabh | Ash      | 32 Washington Street | WDC  |     321200 |
++-------------+-------+----------+----------------------+------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where nickname='bm';
++-------------+------------+----------+--------------+---------+------------+
+| customer_ID | name       | nickname | address      | city    | postalcode |
++-------------+------------+----------+--------------+---------+------------+
+|           2 | Bob Marley | Bm       | Keele Street | Toronto |     300102 |
++-------------+------------+----------+--------------+---------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where customer_id='4';
++-------------+-------------+----------+------------------------+--------+------------+
+| customer_ID | name        | nickname | address                | city   | postalcode |
++-------------+-------------+----------+------------------------+--------+------------+
+|           4 | Dental Jack | DJ       | Spartan Building, East | Brazil |     341020 |
++-------------+-------------+----------+------------------------+--------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where customer_id between 2 and 4;
++-------------+----------------+----------+------------------------+---------+------------+
+| customer_ID | name           | nickname | address                | city    | postalcode |
++-------------+----------------+----------+------------------------+---------+------------+
+|           2 | Bob Marley     | Bm       | Keele Street           | Toronto |     300102 |
+|           3 | Charles theron | cher     | north york             | Toronto |     655345 |
+|           4 | Dental Jack    | DJ       | Spartan Building, East | Brazil  |     341020 |
++-------------+----------------+----------+------------------------+---------+------------+
+3 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where nickname between 'bm' and 'new';
++-------------+----------------+----------+------------------------+----------+------------+
+| customer_ID | name           | nickname | address                | city     | postalcode |
++-------------+----------------+----------+------------------------+----------+------------+
+|           2 | Bob Marley     | Bm       | Keele Street           | Toronto  |     300102 |
+|           3 | Charles theron | cher     | north york             | Toronto  |     655345 |
+|           4 | Dental Jack    | DJ       | Spartan Building, East | Brazil   |     341020 |
+|           5 | Domma Newman   | New      | 250 Carlson blvd       | Canada   |     657645 |
+|           6 | Eston.M        | M        | 21 York.DV             | Toronto  |     657543 |
+|           8 | Bobby Chako    | chak     | kennedy                | New York |     632543 |
++-------------+----------------+----------+------------------------+----------+------------+
+6 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where name like '_o%';
++-------------+--------------+----------+------------------+----------+------------+
+| customer_ID | name         | nickname | address          | city     | postalcode |
++-------------+--------------+----------+------------------+----------+------------+
+|           2 | Bob Marley   | Bm       | Keele Street     | Toronto  |     300102 |
+|           5 | Domma Newman | New      | 250 Carlson blvd | Canada   |     657645 |
+|           8 | Bobby Chako  | chak     | kennedy          | New York |     632543 |
+|           9 | Tont Special | Specie   | Oakville         | GTA      |    6324533 |
++-------------+--------------+----------+------------------+----------+------------+
+4 rows in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where name like '_on%';
++-------------+--------------+----------+----------+------+------------+
+| customer_ID | name         | nickname | address  | city | postalcode |
++-------------+--------------+----------+----------+------+------------+
+|           9 | Tont Special | Specie   | Oakville | GTA  |    6324533 |
++-------------+--------------+----------+----------+------+------------+
+1 row in set (0.00 sec)
+
+MariaDB [csd2204w18]> select * from c1 where name like '_o_n%';
+Empty set (0.00 sec)
